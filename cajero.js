@@ -27,6 +27,10 @@ cuentas.forEach(object => {
         //INTENTOS DE CONTRASEÑA
         if (object.password != contraseña) {
             while (object.password != contraseña) {
+                if (intentos > 3) {
+                    alert("SU CUENTA SE HA BLOQUEADO!!\nFAVOR DE ASISTIR A LA SUCURSAL MÁS CERCANA")
+                    return
+                }
                 alert("Intento " + intentos)
                 contraseña = prompt("Ingrese de nuevo su contraseña")
                 intentos++
@@ -38,17 +42,33 @@ cuentas.forEach(object => {
                 if (opcion == 1) {
                     alert("Su saldo actual es de $" + object.saldo)
                 } else if (opcion == 2) {
-                    ingreso = prompt("Ingreso\nIngrese el monto: $")
-                    ingreso = Number(ingreso)
-                    nuevoSaldo = object.saldo + ingreso
-                    alert("Su nuevo saldo es de $" + nuevoSaldo)
-                    object.saldo = nuevoSaldo
+                    if (object.saldo > 990) {
+                        alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                    } else {
+                        ingreso = prompt("Ingreso\nIngrese el monto: $")
+                        ingreso = Number(ingreso)
+                        nuevoSaldo = object.saldo + ingreso
+                        if (nuevoSaldo > 990) {
+                            alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                        } else {
+                            alert("Su nuevo saldo es de $" + nuevoSaldo)
+                            object.saldo = nuevoSaldo
+                        }
+                    }
                 } else if (opcion == 3) {
-                    retiro = prompt("Retiro\nIngrese el monto: $")
-                    retiro = Number(retiro)
-                    nuevoSaldo = object.saldo - retiro
-                    alert("Su nuevo saldo es de $" + nuevoSaldo)
-                    object.saldo = nuevoSaldo
+                    if (object.saldo < 10) {
+                        alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                    } else {
+                        retiro = prompt("Retiro\nIngrese el monto: $")
+                        retiro = Number(retiro)
+                        nuevoSaldo = object.saldo - retiro
+                        if (nuevoSaldo < 10) {
+                            alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                        } else {
+                            alert("Su nuevo saldo es de $" + nuevoSaldo)
+                            object.saldo = nuevoSaldo
+                        }
+                    }
                 }
                 //NUEVA OPERACIÓN
                 opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
@@ -58,17 +78,33 @@ cuentas.forEach(object => {
                     if (opcion == 1) {
                         alert("Su saldo actual es de $" + object.saldo)
                     } else if (opcion == 2) {
-                        ingreso = prompt("Ingrese el monto: $")
-                        ingreso = Number(ingreso)
-                        nuevoSaldo = object.saldo + ingreso
-                        alert("Su nuevo saldo es de $" + nuevoSaldo)
-                        object.saldo = nuevoSaldo
+                        if (object.saldo > 990) {
+                            alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                        } else {
+                            ingreso = prompt("Ingreso\nIngrese el monto: $")
+                            ingreso = Number(ingreso)
+                            nuevoSaldo = object.saldo + ingreso
+                            if (nuevoSaldo > 990) {
+                                alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                            } else {
+                                alert("Su nuevo saldo es de $" + nuevoSaldo)
+                                object.saldo = nuevoSaldo
+                            }
+                        }
                     } else if (opcion == 3) {
-                        retiro = prompt("Retiro\nIngrese el monto: $")
-                        retiro = Number(retiro)
-                        nuevoSaldo = object.saldo - retiro
-                        alert("Su nuevo saldo es de $" + nuevoSaldo)
-                        object.saldo = nuevoSaldo
+                        if (object.saldo < 10) {
+                            alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                        } else {
+                            retiro = prompt("Retiro\nIngrese el monto: $")
+                            retiro = Number(retiro)
+                            nuevoSaldo = object.saldo - retiro
+                            if (nuevoSaldo < 10) {
+                                alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                            } else {
+                                alert("Su nuevo saldo es de $" + nuevoSaldo)
+                                object.saldo = nuevoSaldo
+                            }
+                        }
                     }
                     opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
                 }
@@ -82,17 +118,33 @@ cuentas.forEach(object => {
             if (opcion == 1) {
                 alert("Su saldo actual es de $" + object.saldo)
             } else if (opcion == 2) {
-                ingreso = prompt("Ingrese el monto: $")
-                ingreso = Number(ingreso)
-                nuevoSaldo = object.saldo + ingreso
-                alert("Su nuevo saldo es de $" + nuevoSaldo)
-                object.saldo = nuevoSaldo
+                if (object.saldo > 990) {
+                    alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                } else {
+                    ingreso = prompt("Ingreso\nIngrese el monto: $")
+                    ingreso = Number(ingreso)
+                    nuevoSaldo = object.saldo + ingreso
+                    if (nuevoSaldo > 990) {
+                        alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                    } else {
+                        alert("Su nuevo saldo es de $" + nuevoSaldo)
+                        object.saldo = nuevoSaldo
+                    }
+                }
             } else if (opcion == 3) {
-                retiro = prompt("Retiro\nIngrese el monto: $")
-                retiro = Number(retiro)
-                nuevoSaldo = object.saldo - retiro
-                alert("Su nuevo saldo es de $" + nuevoSaldo)
-                object.saldo = nuevoSaldo
+                if (object.saldo < 10) {
+                    alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                } else {
+                    retiro = prompt("Retiro\nIngrese el monto: $")
+                    retiro = Number(retiro)
+                    nuevoSaldo = object.saldo - retiro
+                    if (nuevoSaldo < 10) {
+                        alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                    } else {
+                        alert("Su nuevo saldo es de $" + nuevoSaldo)
+                        object.saldo = nuevoSaldo
+                    }
+                }
             }
             opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
             while (opnueva == 1) {
@@ -101,23 +153,39 @@ cuentas.forEach(object => {
                 if (opcion == 1) {
                     alert("Su saldo actual es de $" + object.saldo)
                 } else if (opcion == 2) {
-                    ingreso = prompt("Ingrese el monto: $")
-                    ingreso = Number(ingreso)
-                    nuevoSaldo = object.saldo + ingreso
-                    alert("Su nuevo saldo es de $" + nuevoSaldo)
-                    object.saldo = nuevoSaldo
+                    if (object.saldo > 990) {
+                        alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                    } else {
+                        ingreso = prompt("Ingreso\nIngrese el monto: $")
+                        ingreso = Number(ingreso)
+                        nuevoSaldo = object.saldo + ingreso
+                        if (nuevoSaldo > 990) {
+                            alert("NO PUEDES TENER MÁS DE $990 EN TU CUENTA")
+                        } else {
+                            alert("Su nuevo saldo es de $" + nuevoSaldo)
+                            object.saldo = nuevoSaldo
+                        }
+                    }
                 } else if (opcion == 3) {
-                    retiro = prompt("Retiro\nIngrese el monto: $")
-                    retiro = Number(retiro)
-                    nuevoSaldo = object.saldo - retiro
-                    alert("Su nuevo saldo es de $" + nuevoSaldo)
-                    object.saldo = nuevoSaldoda
+                    if (object.saldo < 10) {
+                        alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                    } else {
+                        retiro = prompt("Retiro\nIngrese el monto: $")
+                        retiro = Number(retiro)
+                        nuevoSaldo = object.saldo - retiro
+                        if (nuevoSaldo < 10) {
+                            alert("NO PUEDES TENER MENOS DE $10 EN TU CUENTA")
+                        } else {
+                            alert("Su nuevo saldo es de $" + nuevoSaldo)
+                            object.saldo = nuevoSaldo
+                        }
+                    }
                 }
                 opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
             }
             alert("QUE TENGAS BUEN DÍA")
         }
-    }else{
+    } else {
         console.log("LA CUENTA NO EXISTE!!")
     }
 })
