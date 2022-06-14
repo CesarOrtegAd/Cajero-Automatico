@@ -69,6 +69,8 @@ cuentas.forEach(object => {
                             object.saldo = nuevoSaldo
                         }
                     }
+                }else{
+                    alert("OPCIÓN INVALIDA")
                 }
                 //NUEVA OPERACIÓN
                 opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
@@ -105,6 +107,8 @@ cuentas.forEach(object => {
                                 object.saldo = nuevoSaldo
                             }
                         }
+                    }else{
+                        alert("OPCIÓN INVALIDA")
                     }
                     opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
                 }
@@ -145,6 +149,8 @@ cuentas.forEach(object => {
                         object.saldo = nuevoSaldo
                     }
                 }
+            }else{
+                alert("OPCIÓN INVALIDA")
             }
             opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
             while (opnueva == 1) {
@@ -180,6 +186,8 @@ cuentas.forEach(object => {
                             object.saldo = nuevoSaldo
                         }
                     }
+                }else{
+                    alert("OPCIÓN INVALIDA")
                 }
                 opnueva = prompt("¿Desea hacer otra operación?\n1 = Si | 2 = No")
             }
